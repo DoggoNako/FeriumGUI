@@ -1,0 +1,3 @@
+[submodule "ferium"]
+	path = ferium
+	url = https://github.com/gorilla-devs/ferium
