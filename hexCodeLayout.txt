@@ -1,0 +1,11 @@
+Your selected colors:
+
+    Text: #ffffff (RGB: 255, 255, 255)
+    Background: #111311 (RGB: 17, 19, 17)
+    Primary: #444c42 (RGB: 68, 76, 66)
+    Secondary: #111311 (RGB: 17, 19, 17)
+    Accent: #71806f (RGB: 113, 128, 111)
+
+Realtime Colors link for selected colors: https://realtimecolors.com/?colors=ffffff-111311-444c42-111311-71806f
+
+Thanks for using RealtimeColors.com!

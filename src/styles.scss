@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+  /* Sizing */
+  --main-border-radius: 12px;
+
+  /* Colors Values */
+  --main-bg: #181a18;
+  --container-bg: #1e211e;
+  --child-container-bg: #232723;
+
+  user-select: none;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* { 
+  margin: 0; 
+  box-sizing: border-box;
+}
+
+/* Font */
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 48px;
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 36px;
+  letter-spacing: -1.2px;
+}
+
+p, span, li { font-size: 18px; }
+///
+
+/* Default Styling */
+.container > div {
+  &:not(:first-child) { margin-top: 16px; }
+  &, div { border-radius: var(--main-border-radius); }
+
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--container-bg);
+}
+
+button {
+  width: fit-content;
+  padding: 8px 16px;
+  font-weight: 700;
+  border-radius: 32px;
+  background-color: #444c42;
+  border: none;
+  cursor: pointer;
+}
+///
+
+/* Common Settings */
+body, nav, .subnav, .getStarted, .activeProfile, .activeProfile > div { display: flex; }
+nav, .subnav, .getStarted, .activeProfile > div { flex-direction: column; }
+nav, .subnav, .container {
+  width: 100%;
+  height: 100%;
+}
+///
+
+body {
+  height: 100vh;
+  padding: 16px;
+
+  /* colors */
+  background-color: #111311;
+
+  &, button { /* Default Styles Font */
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff; 
+  }
+}
+
+nav {
+  width: 64px !important;
+  margin-left: -16px;
+  
+  &, .subnav { 
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subnav { 
+    padding: 24px 0;
+    row-gap: 8px;
+
+    img {
+      width: 24px;
+      height: 24px;
+
+      &[src="./assets/svgs/puzzle-piece.svg"] { margin-left: 1.25px; }
+    }
+  }
+
+  img { cursor: pointer; }
+
+  > img {
+    width: 32px;
+    height: 32px;
+
+    &:last-child { margin-top: 8px; }
+  }
+}
+
+.container {
+  padding: 16px;
+  border-radius: var(--main-border-radius);
+
+  /* colors */
+  background-color: var(--main-bg);
+}
+
+.getStarted {
+  width: 100%;
+  height: 50%;
+  padding: 64px;
+  background-image: url(../assets/imgs/getStartedBG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0px -70px 50px 0px rgba(24, 26, 24, 0.9);
+
+  p { margin-left: 2px; }
+  button { margin-top: 16px; }
+  img {
+    height: 28px;
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    cursor: pointer;
+  }
+}
+
+.activeProfile {
+  width: fit-content;
+  display: flex;
+  flex-direction: inherit !important;
+  align-items: center;
+  padding: 24px 32px;
+  gap: 32px;
+}
+
+.selectedProfile {
+  align-items: center;
+  text-align: center;
+
+  span { 
+    width: 100%; 
+    margin: 8px 0;
+  }
+
+  .btns {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.previewMods {
+  padding: 16px 48px;
+  align-items: center;
+  background-color: var(--child-container-bg);
+
+  h2 { 
+    display: flex; 
+    &::before {
+        content: url(../assets/svgs/puzzle-piece.svg);
+        display: block;
+        width: 22px;
+        margin: -2px 4px 0 0;
+    }
+  }
+
+  ul { 
+    padding: 0 0 0 16px; 
+    color: #B0B0B0;
+
+    &:has(:nth-child(6)) {
+      li:nth-child(6) { 
+        color: #80808099;
+        &::marker { content: ""; }
+        
+        //Don't render when it exceeds 6 elements
+        & ~ li { display: none; } 
+      }
+    }
+  }
+}

@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+:root {
+  /* Sizing */
+  --main-border-radius: 12px;
+  /* Colors Values */
+  --main-bg: #181a18;
+  --container-bg: #1e211e;
+  --child-container-bg: #232723;
+  user-select: none;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Font */
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 48px;
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 36px;
+  letter-spacing: -1.2px;
+}
+
+p, span, li {
+  font-size: 18px;
+}
+
+/* Default Styling */
+.container > div {
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--container-bg);
+}
+.container > div:not(:first-child) {
+  margin-top: 16px;
+}
+.container > div, .container > div div {
+  border-radius: var(--main-border-radius);
+}
+
+button {
+  width: fit-content;
+  padding: 8px 16px;
+  font-weight: 700;
+  border-radius: 32px;
+  background-color: #444c42;
+  border: none;
+  cursor: pointer;
+}
+
+/* Common Settings */
+body, nav, .subnav, .getStarted, .activeProfile, .activeProfile > div {
+  display: flex;
+}
+
+nav, .subnav, .getStarted, .activeProfile > div {
+  flex-direction: column;
+}
+
+nav, .subnav, .container {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+  padding: 16px;
+  /* colors */
+  background-color: #111311;
+}
+body, body button { /* Default Styles Font */
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+nav {
+  width: 64px !important;
+  margin-left: -16px;
+}
+nav, nav .subnav {
+  flex-direction: column;
+  align-items: center;
+}
+nav .subnav {
+  padding: 24px 0;
+  row-gap: 8px;
+}
+nav .subnav img {
+  width: 24px;
+  height: 24px;
+}
+nav .subnav img[src="./assets/svgs/puzzle-piece.svg"] {
+  margin-left: 1.25px;
+}
+nav img {
+  cursor: pointer;
+}
+nav > img {
+  width: 32px;
+  height: 32px;
+}
+nav > img:last-child {
+  margin-top: 8px;
+}
+
+.container {
+  padding: 16px;
+  border-radius: var(--main-border-radius);
+  /* colors */
+  background-color: var(--main-bg);
+}
+
+.getStarted {
+  width: 100%;
+  height: 50%;
+  padding: 64px;
+  background-image: url(../assets/imgs/getStartedBG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0px -70px 50px 0px rgba(24, 26, 24, 0.9);
+}
+.getStarted p {
+  margin-left: 2px;
+}
+.getStarted button {
+  margin-top: 16px;
+}
+.getStarted img {
+  height: 28px;
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  cursor: pointer;
+}
+
+.activeProfile {
+  width: fit-content;
+  display: flex;
+  flex-direction: inherit !important;
+  align-items: center;
+  padding: 24px 32px;
+  gap: 32px;
+}
+
+.selectedProfile {
+  align-items: center;
+  text-align: center;
+}
+.selectedProfile span {
+  width: 100%;
+  margin: 8px 0;
+}
+.selectedProfile .btns {
+  display: flex;
+  gap: 8px;
+}
+
+.previewMods {
+  padding: 16px 48px;
+  align-items: center;
+  background-color: var(--child-container-bg);
+}
+.previewMods h2 {
+  display: flex;
+}
+.previewMods h2::before {
+  content: url(../assets/svgs/puzzle-piece.svg);
+  display: block;
+  width: 22px;
+  margin: -2px 4px 0 0;
+}
+.previewMods ul {
+  padding: 0 0 0 16px;
+  color: #B0B0B0;
+}
+.previewMods ul:has(:nth-child(6)) li:nth-child(6) {
+  color: rgba(128, 128, 128, 0.6);
+}
+.previewMods ul:has(:nth-child(6)) li:nth-child(6)::marker {
+  content: "";
+}
+.previewMods ul:has(:nth-child(6)) li:nth-child(6) ~ li {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
